@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 49051201}
-    gameObjectHash: 31098
+    gameObjectHash: 13680
     member: {fileID: 49051203}
     renderer: {fileID: 0}
     renderHash: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1811902086}
-    gameObjectHash: 31350
+    gameObjectHash: 13712
     member: {fileID: 49051203}
     renderer: {fileID: 0}
     renderHash: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 145614035}
-    gameObjectHash: 31136
+    gameObjectHash: 13692
     member: {fileID: 49051203}
     renderer: {fileID: 145614037}
     renderHash: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 709455020}
-    gameObjectHash: 31192
+    gameObjectHash: 13702
     member: {fileID: 49051203}
     renderer: {fileID: 709455022}
     renderHash: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
     terrain: {fileID: 0}
     terrainHash: 0
     rendererBounds:
-      m_Center: {x: -0.267, y: 0.031000001, z: 0.141}
+      m_Center: {x: -0.267, y: 0.019, z: 0.141}
       m_Extent: {x: 0.110000245, y: 0.015000047, z: 0.015000003}
     lightBounds:
       m_Center: {x: 0, y: 0, z: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 145614035}
-    gameObjectHash: 31136
+    gameObjectHash: 13692
     member: {fileID: 49051203}
     renderer: {fileID: 145614037}
     renderHash: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 709455020}
-    gameObjectHash: 31192
+    gameObjectHash: 13702
     member: {fileID: 49051203}
     renderer: {fileID: 709455022}
     renderHash: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
     terrain: {fileID: 0}
     terrainHash: 0
     rendererBounds:
-      m_Center: {x: -0.267, y: 0.031000001, z: 0.141}
+      m_Center: {x: -0.267, y: 0.019, z: 0.141}
       m_Extent: {x: 0.110000245, y: 0.015000047, z: 0.015000003}
     lightBounds:
       m_Center: {x: 0, y: 0, z: 0}
@@ -517,7 +517,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709455020}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.7800001, y: -0.21, z: 0.24000001}
+  m_LocalPosition: {x: 0.7800001, y: -0.27, z: 0.24000001}
   m_LocalScale: {x: 0.1500003, y: 0.55000114, z: 0.14999999}
   m_Children: []
   m_Father: {fileID: 49051202}
