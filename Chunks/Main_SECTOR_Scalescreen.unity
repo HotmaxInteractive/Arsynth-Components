@@ -462,7 +462,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128597547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -209.11813}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000004, z: 1.0000004}
   m_Children: []
   m_Father: {fileID: 771803798}
@@ -470,7 +470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 150436.42}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128597549
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 199854363}
-    gameObjectHash: 37962
+    gameObjectHash: 11710
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 771803797}
-    gameObjectHash: 38000
+    gameObjectHash: 11722
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1785913363}
-    gameObjectHash: 38134
+    gameObjectHash: 11804
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1948638525}
-    gameObjectHash: 38154
+    gameObjectHash: 11824
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -869,7 +869,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 828305536}
-    gameObjectHash: 38010
+    gameObjectHash: 11732
     member: {fileID: 199854365}
     renderer: {fileID: 828305538}
     renderHash: 0
@@ -901,7 +901,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 888377833}
-    gameObjectHash: 38036
+    gameObjectHash: 11742
     member: {fileID: 199854365}
     renderer: {fileID: 888377835}
     renderHash: 0
@@ -933,7 +933,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1159428688}
-    gameObjectHash: 38096
+    gameObjectHash: 11772
     member: {fileID: 199854365}
     renderer: {fileID: 1159428690}
     renderHash: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1968577811}
-    gameObjectHash: 38158
+    gameObjectHash: 11828
     member: {fileID: 199854365}
     renderer: {fileID: 1968577813}
     renderHash: 0
@@ -997,7 +997,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 156344104}
-    gameObjectHash: 37952
+    gameObjectHash: 11700
     member: {fileID: 199854365}
     renderer: {fileID: 156344106}
     renderHash: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 114227936}
-    gameObjectHash: 37932
+    gameObjectHash: 11680
     member: {fileID: 199854365}
     renderer: {fileID: 114227938}
     renderHash: 0
@@ -1061,7 +1061,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1738210557}
-    gameObjectHash: 38124
+    gameObjectHash: 11794
     member: {fileID: 199854365}
     renderer: {fileID: 1738210559}
     renderHash: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 972595321}
-    gameObjectHash: 38066
+    gameObjectHash: 11762
     member: {fileID: 199854365}
     renderer: {fileID: 972595323}
     renderHash: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1975469556}
-    gameObjectHash: 38168
+    gameObjectHash: 11838
     member: {fileID: 199854365}
     renderer: {fileID: 1975469558}
     renderHash: 0
@@ -1157,7 +1157,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 940255169}
-    gameObjectHash: 38056
+    gameObjectHash: 11752
     member: {fileID: 199854365}
     renderer: {fileID: 940255171}
     renderHash: 0
@@ -1189,7 +1189,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1854277468}
-    gameObjectHash: 38144
+    gameObjectHash: 11814
     member: {fileID: 199854365}
     renderer: {fileID: 1854277470}
     renderHash: 0
@@ -1221,7 +1221,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 92872778}
-    gameObjectHash: 37916
+    gameObjectHash: 11670
     member: {fileID: 199854365}
     renderer: {fileID: 92872780}
     renderHash: 0
@@ -1253,7 +1253,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 261643304}
-    gameObjectHash: 37968
+    gameObjectHash: 11716
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -1285,7 +1285,39 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 128597547}
-    gameObjectHash: 37942
+    gameObjectHash: 11690
+    member: {fileID: 199854365}
+    renderer: {fileID: 0}
+    renderHash: 0
+    light: {fileID: 0}
+    lightHash: 0
+    terrain: {fileID: 0}
+    terrainHash: 0
+    rendererBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    lightBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    terrainBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+    shadowLight: 0
+    rendererCastsShadows: 0
+    terrainCastsShadows: 0
+    layer:
+      serializedVersion: 2
+      m_Bits: 0
+    shadowLightPosition: {x: 0, y: 0, z: 0}
+    shadowLightRange: 0
+    shadowLightType: 3
+    shadowCullingMask: 0
+    processed: 1
+    renderCulled: 0
+    lightCulled: 0
+    terrainCulled: 0
+  - gameObject: {fileID: 1706658817}
+    gameObjectHash: 11788
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -1318,7 +1350,7 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 828305536}
-    gameObjectHash: 38010
+    gameObjectHash: 11732
     member: {fileID: 199854365}
     renderer: {fileID: 828305538}
     renderHash: 0
@@ -1350,7 +1382,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 888377833}
-    gameObjectHash: 38036
+    gameObjectHash: 11742
     member: {fileID: 199854365}
     renderer: {fileID: 888377835}
     renderHash: 0
@@ -1382,7 +1414,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1159428688}
-    gameObjectHash: 38096
+    gameObjectHash: 11772
     member: {fileID: 199854365}
     renderer: {fileID: 1159428690}
     renderHash: 0
@@ -1414,7 +1446,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1968577811}
-    gameObjectHash: 38158
+    gameObjectHash: 11828
     member: {fileID: 199854365}
     renderer: {fileID: 1968577813}
     renderHash: 0
@@ -1446,7 +1478,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 156344104}
-    gameObjectHash: 37952
+    gameObjectHash: 11700
     member: {fileID: 199854365}
     renderer: {fileID: 156344106}
     renderHash: 0
@@ -1478,7 +1510,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 114227936}
-    gameObjectHash: 37932
+    gameObjectHash: 11680
     member: {fileID: 199854365}
     renderer: {fileID: 114227938}
     renderHash: 0
@@ -1510,7 +1542,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1738210557}
-    gameObjectHash: 38124
+    gameObjectHash: 11794
     member: {fileID: 199854365}
     renderer: {fileID: 1738210559}
     renderHash: 0
@@ -1542,7 +1574,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 972595321}
-    gameObjectHash: 38066
+    gameObjectHash: 11762
     member: {fileID: 199854365}
     renderer: {fileID: 972595323}
     renderHash: 0
@@ -1574,7 +1606,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1975469556}
-    gameObjectHash: 38168
+    gameObjectHash: 11838
     member: {fileID: 199854365}
     renderer: {fileID: 1975469558}
     renderHash: 0
@@ -1606,7 +1638,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 940255169}
-    gameObjectHash: 38056
+    gameObjectHash: 11752
     member: {fileID: 199854365}
     renderer: {fileID: 940255171}
     renderHash: 0
@@ -1638,7 +1670,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1854277468}
-    gameObjectHash: 38144
+    gameObjectHash: 11814
     member: {fileID: 199854365}
     renderer: {fileID: 1854277470}
     renderHash: 0
@@ -1670,7 +1702,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 92872778}
-    gameObjectHash: 37916
+    gameObjectHash: 11670
     member: {fileID: 199854365}
     renderer: {fileID: 92872780}
     renderHash: 0
@@ -1817,17 +1849,18 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771803797}
   m_LocalRotation: {x: 0.17495242, y: -0, z: -0, w: 0.98457694}
-  m_LocalPosition: {x: 0, y: 0, z: -0.22384617}
+  m_LocalPosition: {x: 0, y: 0, z: -0.237}
   m_LocalScale: {x: 0.0009057746, y: 0.00083729054, z: 0.2207416}
   m_Children:
   - {fileID: 1785913364}
   - {fileID: 128597548}
+  - {fileID: 1706658818}
   m_Father: {fileID: 199854364}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.15200001, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.1369195, y: 134.16324}
+  m_AnchoredPosition: {x: 0.164, y: -0.03}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771803799
@@ -2792,6 +2825,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1706658817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1706658818}
+  - component: {fileID: 1706658819}
+  m_Layer: 0
+  m_Name: ScaleView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1706658818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706658817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 771803798}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1706658819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706658817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96205f63c8e14ae4491e40558a019a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738210557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,16 +3069,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785913363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -209.15805}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.0000004, z: 1.0000004}
   m_Children:
   - {fileID: 1948638526}
   m_Father: {fileID: 771803798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 199.09561, y: 150629.42}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 438, y: 392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785913365
@@ -3054,7 +3132,7 @@ Canvas:
   m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -3279,7 +3357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1968577811
