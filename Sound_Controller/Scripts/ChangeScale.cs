@@ -18,18 +18,18 @@ public class ChangeScale : MonoBehaviour, IVirtualButtonEventHandler {
 		scaleTypes[4] = "whole tone";
 
 		// set activeScale on every button
-		foreach (GameObject btn in GameObject.FindGameObjectsWithTag("key")) {
+		/*foreach (GameObject btn in GameObject.FindGameObjectsWithTag("key")) {
 			btn.GetComponent<PlaySound>().activeScale = scaleTypes[0];
-		}
+		}*/
 	}
 
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
 		i++;
 
 		if (i == scaleTypes.Length){ i = 0; }
-		foreach (GameObject btn in GameObject.FindGameObjectsWithTag("key")) {
+		/*foreach (GameObject btn in GameObject.FindGameObjectsWithTag("key")) {
 			btn.GetComponent<PlaySound>().activeScale = scaleTypes[i];
-		}
+		}*/
 	}
 
 	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){}

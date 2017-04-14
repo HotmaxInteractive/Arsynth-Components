@@ -4,56 +4,68 @@ using UnityEngine;
 using Vuforia;
 
 public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
-	AudioSource source;
-	public GameObject soundSource;
-	public string activeScale;
-	public float majorSteps;
-	public float minorSteps;
-	public float bluesSteps;
-	public float pentatonicSteps;
-	public float wholeToneSteps;
-	public float pitchMultiplier;
+
+	//note being played
+	AudioSource note;
+
+	//steps and multiplier
+	[SerializeField]
+	private float majorSteps, minorSteps, bluesSteps, pentatonicSteps, wholeToneSteps;
+	private float pitchMultiplier = 1.059463094359f;
+	private float volume = 0.5f;
+
+
+	// DELETE THIS AFTER EVERYTHING HAS BEEN FIXED
+	// -------------------------------------------
+	public string activeScale = "holymoly";
+	//---------------------------------------------
+
+
+	//store
+	private AudioStore store;
+
 
 	void Start () {
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
+		store.scale.RegisterObserver (updatePitch);
+		store.sample.RegisterObserver (updateSample);
+
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
-		source = soundSource.GetComponent<AudioSource> ();
-		source.clip = Resources.Load ("Clips/fuzz") as AudioClip;
-		source.volume = .5f;
-		pitchMultiplier = 1.059463094359f;
 	}
 
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
-		source.Play ();
-		source.loop = true;
+		note.volume = volume;
+		note.Play ();
+
 	}
+	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){}
+		
 
-	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){
-		source.loop = false;
-	}
-
-	void Update(){
-
-		switch (activeScale)  
+	void updatePitch(string scale){
+		switch (scale)  
 		{  
 		case "major":  
-			source.pitch = Mathf.Pow (pitchMultiplier, majorSteps);
+			note.pitch = Mathf.Pow (pitchMultiplier, majorSteps);
 			break;
 		case "minor":  
-			source.pitch = Mathf.Pow (pitchMultiplier, minorSteps);  
+			note.pitch = Mathf.Pow (pitchMultiplier, minorSteps);  
 			break;  
 		case "blues":  
-			source.pitch = Mathf.Pow (pitchMultiplier, bluesSteps); 
+			note.pitch = Mathf.Pow (pitchMultiplier, bluesSteps); 
 			break;
 		case "pentatonic":  
-			source.pitch = Mathf.Pow (pitchMultiplier, pentatonicSteps);  
+			note.pitch = Mathf.Pow (pitchMultiplier, pentatonicSteps);  
 			break;
 		case "whole tone":  
-			source.pitch = Mathf.Pow (pitchMultiplier, wholeToneSteps);  
+			note.pitch = Mathf.Pow (pitchMultiplier, wholeToneSteps);  
 			break;
 		default:  
-			source.pitch = Mathf.Pow (pitchMultiplier, majorSteps);  
+			note.pitch = Mathf.Pow (pitchMultiplier, majorSteps);  
 			break;  
 		}  
+	}
 
+	void updateSample(AudioClip sample){
+		note.clip = sample;
 	}
 }

@@ -1,44 +1,68 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioStore : MonoBehaviour {
 
+	//private sampleCollection/scaleCollection and hookable active values
+	private List<sampleItem> __sampleCollection = new List<sampleItem>();
+	public U3D.KVO.ReadOnlyValueObserving<AudioClip> sample { get { return __sample; } } 
+	U3D.KVO.ValueObserving<AudioClip> __sample = new U3D.KVO.ValueObserving<AudioClip>();
 
-	//start observable pattern
-	public U3D.KVO.ReadOnlyValueObserving<float> echoAmount { get { return s_echoAmount; } } 
-	U3D.KVO.ValueObserving<float> s_echoAmount = new U3D.KVO.ValueObserving<float>();
+	private List<string> __scaleCollection = new List<string>();
+	public U3D.KVO.ReadOnlyValueObserving<string> scale { get { return __scale; } } 
+	U3D.KVO.ValueObserving<string> __scale = new U3D.KVO.ValueObserving<string>();
 
-	public U3D.KVO.ReadOnlyValueObserving<float> chorusAmount { get { return s_chorusAmount; } } 
-	U3D.KVO.ValueObserving<float> s_chorusAmount = new U3D.KVO.ValueObserving<float>();
 
-	public U3D.KVO.ReadOnlyValueObserving<float> reverbAmount { get { return s_reverbAmount; } } 
-	U3D.KVO.ValueObserving<float> s_reverbAmount = new U3D.KVO.ValueObserving<float>();
+	//other observables
+	public U3D.KVO.ReadOnlyValueObserving<float> echoAmount { get { return __echoAmount; } } 
+	U3D.KVO.ValueObserving<float> __echoAmount = new U3D.KVO.ValueObserving<float>();
 
-	public U3D.KVO.ReadOnlyValueObserving<bool> looper { get { return s_looper; } } 
-	U3D.KVO.ValueObserving<bool> s_looper = new U3D.KVO.ValueObserving<bool>();
+	public U3D.KVO.ReadOnlyValueObserving<float> chorusAmount { get { return __chorusAmount; } } 
+	U3D.KVO.ValueObserving<float> __chorusAmount = new U3D.KVO.ValueObserving<float>();
 
-	public U3D.KVO.ReadOnlyValueObserving<string> sample { get { return s_sample; } } 
-	U3D.KVO.ValueObserving<string> s_sample = new U3D.KVO.ValueObserving<string>();
+	public U3D.KVO.ReadOnlyValueObserving<float> reverbAmount { get { return __reverbAmount; } } 
+	U3D.KVO.ValueObserving<float> __reverbAmount = new U3D.KVO.ValueObserving<float>();
 
-	public U3D.KVO.ReadOnlyValueObserving<string> scale { get { return s_scale; } } 
-	U3D.KVO.ValueObserving<string> s_scale = new U3D.KVO.ValueObserving<string>();
+	public U3D.KVO.ReadOnlyValueObserving<bool> looper { get { return __looper; } } 
+	U3D.KVO.ValueObserving<bool> __looper = new U3D.KVO.ValueObserving<bool>();
 
 
 	// Initializing values
 	void Start () {
-		s_echoAmount.set = 0f;
-		s_chorusAmount.set = 0f;
-		s_reverbAmount.set = 0f;
-		s_looper.set = false;
 
-		s_sample.set = "fuzz";
-		s_scale.set = "major";
+		__sampleCollection.Add (new sampleItem("fuzz"));
+		__sampleCollection.Add (new sampleItem("glass pad"));
+		__sampleCollection.Add (new sampleItem("arpeggio"));
+		__sampleCollection.Add (new sampleItem("triangle"));
+		__sampleCollection.Add (new sampleItem("viola"));
+		__sampleCollection.Add (new sampleItem("derp"));
+		__sample.set = __sampleCollection [0].clip;
+
+		__scaleCollection.Add ("major");
+		__scaleCollection.Add ("minor");
+		__scaleCollection.Add ("blues");
+		__scaleCollection.Add ("pentatonic");
+		__scaleCollection.Add ("wholetone");
+		__scale.set = __scaleCollection [0];
+
+
+		__echoAmount.set = 0f;
+		__chorusAmount.set = 0f;
+		__reverbAmount.set = 0f;
+		__looper.set = false;
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+
+	//wrapper for item in sampleCollection
+	public class sampleItem {
+		public string name;
+		public AudioClip clip;
+		public sampleItem(string sampleName) {
+			name = sampleName;
+			clip = Resources.Load("Clips/" + sampleName) as AudioClip;
+		}
 	}
 }
