@@ -10,6 +10,7 @@ public class EchoEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 
 	void Start () {
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
+
 		btnPress = false;
 	}
 
