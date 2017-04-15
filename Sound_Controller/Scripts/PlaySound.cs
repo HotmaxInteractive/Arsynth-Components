@@ -15,7 +15,7 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 	private float volume = 0.5f;
 
 
-	// DELETE THIS AFTER EVERYTHING HAS BEEN FIXED
+	// TODO: DELETE THIS AFTER EVERYTHING HAS BEEN FIXED
 	// -------------------------------------------
 	public string activeScale = "holymoly";
 	//---------------------------------------------
@@ -36,7 +36,6 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
 		note.volume = volume;
 		note.Play ();
-
 	}
 	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){}
 		

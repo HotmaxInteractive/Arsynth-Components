@@ -9,10 +9,14 @@ public class AudioStore : MonoBehaviour {
 	private List<sampleItem> __sampleCollection = new List<sampleItem>();
 	public U3D.KVO.ReadOnlyValueObserving<AudioClip> sample { get { return __sample; } } 
 	U3D.KVO.ValueObserving<AudioClip> __sample = new U3D.KVO.ValueObserving<AudioClip>();
+	U3D.KVO.ValueObserving<int> __samplePosition = new U3D.KVO.ValueObserving<int>();
+
 
 	private List<string> __scaleCollection = new List<string>();
 	public U3D.KVO.ReadOnlyValueObserving<string> scale { get { return __scale; } } 
 	U3D.KVO.ValueObserving<string> __scale = new U3D.KVO.ValueObserving<string>();
+	U3D.KVO.ValueObserving<int> __scalePosition = new U3D.KVO.ValueObserving<int>();
+
 
 
 	//other observables
@@ -38,15 +42,17 @@ public class AudioStore : MonoBehaviour {
 		__sampleCollection.Add (new sampleItem("triangle"));
 		__sampleCollection.Add (new sampleItem("viola"));
 		__sampleCollection.Add (new sampleItem("derp"));
-		__sample.set = __sampleCollection [0].clip;
+		__samplePosition.set = 0;
+		__sample.set = __sampleCollection [__samplePosition.get].clip;
+
 
 		__scaleCollection.Add ("major");
 		__scaleCollection.Add ("minor");
 		__scaleCollection.Add ("blues");
 		__scaleCollection.Add ("pentatonic");
 		__scaleCollection.Add ("wholetone");
-		__scale.set = __scaleCollection [0];
-
+		__scalePosition.set = 0;
+		__scale.set = __scaleCollection [__scalePosition.get];
 
 		__echoAmount.set = 0f;
 		__chorusAmount.set = 0f;
@@ -54,6 +60,54 @@ public class AudioStore : MonoBehaviour {
 		__looper.set = false;
 
 	}
+
+
+	// -----------------------------------------
+	//           M U T A T O R S
+	//------------------------------------------
+	public void INCREMENT_ECHO_AMOUNT (){
+		__echoAmount.set = __echoAmount.get + 15f;
+	}
+	public void INCREMENT_REVERB_AMOUNT (){
+		__reverbAmount.set = __reverbAmount.get + 0.5f;
+	}
+	public void INCREMENT_CHORUS_AMOUNT (){
+		__chorusAmount.set = __chorusAmount.get + 0.5f;
+	}
+	public void RESET_ECHO_AMOUNT (){
+		__echoAmount.set = 0f;
+	}
+	public void RESET_REVERB_AMOUNT (){
+		__reverbAmount.set = 0f;
+	}
+	public void RESET_CHORUS_AMOUNT (){
+		__chorusAmount.set = 0f;
+	}
+
+	public void TOGGLE_LOOPER(){
+		__looper.set = !__looper.get;
+	}
+
+
+	public void INCREMENT_SCALE (){
+		if (__scalePosition.get >= __scaleCollection.Count) {
+			__scalePosition.set = 0;
+		} else {
+			__scalePosition.set = __scalePosition.get + 1;
+		}
+		__scale.set = __scaleCollection [__scalePosition.get];
+	}
+		
+	public void INCREMENT_SAMPLE (){
+		if (__samplePosition.get >= __sampleCollection.Count) {
+			__samplePosition.set = 0;
+		} else {
+			__samplePosition.set = __samplePosition.get + 1;
+		}
+		__sample.set = __sampleCollection [__scalePosition.get].clip;
+	}
+
+
 
 
 	//wrapper for item in sampleCollection

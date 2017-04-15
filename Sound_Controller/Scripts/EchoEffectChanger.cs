@@ -5,17 +5,19 @@ using Vuforia;
 
 public class EchoEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 
-	public AudioEchoFilter effect;
 	public bool btnPress;
 
-	void Start () {
-		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
+	//store
+	private AudioStore store;
 
+	void Start () {
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
+		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 		btnPress = false;
 	}
 
 	void Update () {
-		if (effect.delay >= 5000) {
+/*		if (effect.delay >= 5000) {
 			effect.delay = 0;
 		};
 		if (effect.delay < 500) {
@@ -23,9 +25,9 @@ public class EchoEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 		} else {
 			effect.enabled = true;
 		}
-			
+			*/
 		if (btnPress == true) {
-			effect.delay += 15;
+			store.INCREMENT_ECHO_AMOUNT();
 		}
 	}
 

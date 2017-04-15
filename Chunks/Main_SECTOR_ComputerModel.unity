@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 713180116}
-    gameObjectHash: 39922
+    gameObjectHash: 11676
     member: {fileID: 713180118}
     renderer: {fileID: 0}
     renderHash: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 266348656}
-    gameObjectHash: 39912
+    gameObjectHash: 11666
     member: {fileID: 713180118}
     renderer: {fileID: 266348658}
     renderHash: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 835674943}
-    gameObjectHash: 39928
+    gameObjectHash: 11682
     member: {fileID: 713180118}
     renderer: {fileID: 835674946}
     renderHash: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 266348656}
-    gameObjectHash: 39912
+    gameObjectHash: 11666
     member: {fileID: 713180118}
     renderer: {fileID: 266348658}
     renderHash: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 835674943}
-    gameObjectHash: 39928
+    gameObjectHash: 11682
     member: {fileID: 713180118}
     renderer: {fileID: 835674946}
     renderHash: 0
