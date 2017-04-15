@@ -5,44 +5,23 @@ using Vuforia;
 
 public class ChangeSound : MonoBehaviour, IVirtualButtonEventHandler {
 
-	AudioSource[] sources;
-	GameObject sounds;
-	AudioClip soundName;
-	int iterator;
-	AudioClip[] clips = new AudioClip[6];
-	public string soundString;
+	//store
+	private AudioStore store;
+
+	// TODO: REMOVE AFTER EVERYTHING IS HOOKED UP TO STORE
+	//-----------------------------------------------------
+	public string soundString = "holy moly";
+	//-----------------------------------------------------
 
 	void Start () {
-		sounds = GameObject.Find ("Sounds");
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
-		sources = sounds.GetComponentsInChildren<AudioSource> ();
-		iterator = 0;
-
-		//TODO take out demung, toy piano, rhodes, organ, 
-
-		clips[0] = Resources.Load ("Clips/fuzz") as AudioClip;
-		clips[1] = Resources.Load ("Clips/glass pad") as AudioClip;
-		clips[2] = Resources.Load ("Clips/arpeggio") as AudioClip;
-		clips[3] = Resources.Load ("Clips/triangle") as AudioClip;
-		clips[4] = Resources.Load ("Clips/viola") as AudioClip;
-		clips[5] = Resources.Load ("Clips/derp") as AudioClip;
-
 
 	}
 
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
-		
-		iterator++;
-		if (iterator == clips.Length){ iterator = 0; }
-
-		foreach (AudioSource source in sources) {
-			source.clip = clips[iterator];
-		}
-
-		soundString = clips [iterator].name;
+		store.INCREMENT_SAMPLE ();
 	}
-		
-	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){}
 
-	void Update () {}
+	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){}
 }

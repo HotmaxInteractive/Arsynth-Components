@@ -5,27 +5,22 @@ using Vuforia;
 
 public class ToggleLoop : MonoBehaviour, IVirtualButtonEventHandler {
 
-	public AudioEchoFilter delay;
-	private bool looperIsOn;
+	//store
+	private AudioStore store;
 
 	void Start () {
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
-		delay.decayRatio = .5f;
-		looperIsOn = false;
-	}
-
-	void Update () {
-		
 	}
 
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb) {
-		looperIsOn = !looperIsOn;
+		store.TOGGLE_LOOPER ();
 
-		if (looperIsOn) {
+		/*if (looperIsOn) {
 			delay.decayRatio = 1;
 		}else{
 			delay.decayRatio = .5f;
-		}
+		}*/
 	}
 
 	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb) {

@@ -5,16 +5,20 @@ using Vuforia;
 
 public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 
-	public AudioChorusFilter effect;
 	public bool btnPress;
 
+	//store
+	private AudioStore store;
+
 	void Start () {
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 		btnPress = false;
 	}
 
+
 	void Update () {
-		
+		/*
 		if (effect.rate >= 20) {
 			effect.rate = 0;
 		};
@@ -22,11 +26,10 @@ public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 			effect.enabled = false;
 		} else {
 			effect.enabled = true;
-		}
+		}*/
 
 		if (btnPress == true) {
-			effect.rate += .05f;
-
+			store.INCREMENT_CHORUS_AMOUNT();
 		}
 
 	}
