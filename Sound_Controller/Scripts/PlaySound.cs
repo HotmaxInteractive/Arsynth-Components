@@ -24,6 +24,10 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 	//store
 	private AudioStore store;
 
+	void Awake () {
+		note = new AudioSource();
+		note.clip = Resources.Load ("Clips/fuzz") as AudioClip;
+	}
 
 	void Start () {
 		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
@@ -59,6 +63,7 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 			note.pitch = Mathf.Pow (pitchMultiplier, wholeToneSteps);  
 			break;
 		default:  
+			Debug.Log (note);
 			note.pitch = Mathf.Pow (pitchMultiplier, majorSteps);  
 			break;  
 		}  

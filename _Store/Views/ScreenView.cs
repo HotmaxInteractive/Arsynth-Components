@@ -5,8 +5,13 @@ using UnityEngine;
 public class ScreenView : MonoBehaviour {
 
 	private AudioStore store;
-	private List<GameObject> effectCollection;
+	private List<GameObject> effectCollection = new List<GameObject>();
 	private GameObject faceCanvas;
+
+	void Awake(){
+		faceCanvas = gameObject.transform.parent.Find ("FaceScreen").gameObject;
+		effectCollection.Add(gameObject.transform.parent.Find ("ScaleScreen").gameObject);
+	}
 
 	void Start () {
 		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
@@ -15,10 +20,6 @@ public class ScreenView : MonoBehaviour {
 		store.echoAmount.RegisterObserver (updateEcho);
 		store.reverbAmount.RegisterObserver (updateReverb);
 		store.chorusAmount.RegisterObserver (updateChorus);
-
-
-		faceCanvas = gameObject.transform.parent.Find ("FaceScreen").gameObject;
-		effectCollection.Add(gameObject.transform.parent.Find ("ScaleScreen").gameObject);
 	}
 
 	//watchers -- passes string that sets component
@@ -42,15 +43,19 @@ public class ScreenView : MonoBehaviour {
 		
 		faceCanvas.GetComponent<Canvas> ().enabled = false;
 		foreach(GameObject effectScreen in effectCollection){
-			effectScreen.GetComponent<Canvas> ().enabled = false;
+			if (effectScreen.name == type) {
+				effectScreen.GetComponent<Canvas> ().enabled = true;
+			} else {
+				effectScreen.GetComponent<Canvas> ().enabled = false;
+			}
 		}
-		gameObject.transform.parent.Find (type).GetComponent<Canvas>().enabled = true;
+
 		Invoke("timeoutToFace", 5);
 	}
 
 
 	//turn face back on eventually, turn effects off again
-	private void timeoutToFace(int time){
+	private void timeoutToFace(){
 
 		faceCanvas.GetComponent<Canvas> ().enabled = true;
 		foreach(GameObject effectScreen in effectCollection){

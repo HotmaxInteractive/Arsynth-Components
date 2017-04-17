@@ -24,7 +24,7 @@ public class NodePosition : MonoBehaviour {
 	public Transform node10;
 	public Transform node11;
 
-	private List<Transform> nodesCollection;
+	private List<Transform> nodesCollection = new List<Transform>();
 	Vector3 [] homePositions = new Vector3[12];
 
 	bool active;
@@ -39,6 +39,7 @@ public class NodePosition : MonoBehaviour {
 
 	void Start () {
 
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 		store.scale.RegisterObserver (updateScale);
 
 		//setting nodes - could change
