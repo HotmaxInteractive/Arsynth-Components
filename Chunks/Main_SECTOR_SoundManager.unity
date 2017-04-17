@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 492340477}
   - component: {fileID: 492340476}
   - component: {fileID: 492340475}
+  - component: {fileID: 492340479}
   m_Layer: 0
   m_Name: SoundBoard
   m_TagString: Untagged
@@ -149,7 +150,7 @@ AudioEchoFilter:
   m_GameObject: {fileID: 492340474}
   m_Enabled: 1
   m_Delay: 500
-  m_DecayRatio: 0.5
+  m_DecayRatio: 0
   m_WetMix: 1
   m_DryMix: 1
 --- !u!164 &492340477
@@ -184,6 +185,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492340474}
   m_Enabled: 1
+--- !u!114 &492340479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492340474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04921b92a45cf94fad144bf95ea969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865932419
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 2034962533}
-    gameObjectHash: 11452
+    gameObjectHash: 11114
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0
@@ -302,7 +314,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 492340474}
-    gameObjectHash: 11444
+    gameObjectHash: 11096
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0

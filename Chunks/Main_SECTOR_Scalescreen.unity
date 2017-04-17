@@ -446,7 +446,6 @@ GameObject:
   - component: {fileID: 128597548}
   - component: {fileID: 128597551}
   - component: {fileID: 128597550}
-  - component: {fileID: 128597549}
   m_Layer: 0
   m_Name: Scale
   m_TagString: scaleText
@@ -473,18 +472,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &128597549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114474622588292038, guid: b368b050cd6453142a802189c0443548,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128597547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4380c1ede50d21d42850d3ec8cf6eb04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &128597550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +479,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128597547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -741,7 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 199854363}
-    gameObjectHash: 11710
+    gameObjectHash: 20120
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -773,7 +760,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 771803797}
-    gameObjectHash: 11722
+    gameObjectHash: 20132
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -805,7 +792,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1785913363}
-    gameObjectHash: 11804
+    gameObjectHash: 20214
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -837,7 +824,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1948638525}
-    gameObjectHash: 11824
+    gameObjectHash: 20234
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -869,7 +856,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 828305536}
-    gameObjectHash: 11732
+    gameObjectHash: 20142
     member: {fileID: 199854365}
     renderer: {fileID: 828305538}
     renderHash: 0
@@ -901,7 +888,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 888377833}
-    gameObjectHash: 11742
+    gameObjectHash: 20152
     member: {fileID: 199854365}
     renderer: {fileID: 888377835}
     renderHash: 0
@@ -933,7 +920,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1159428688}
-    gameObjectHash: 11772
+    gameObjectHash: 20182
     member: {fileID: 199854365}
     renderer: {fileID: 1159428690}
     renderHash: 0
@@ -965,7 +952,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1968577811}
-    gameObjectHash: 11828
+    gameObjectHash: 20238
     member: {fileID: 199854365}
     renderer: {fileID: 1968577813}
     renderHash: 0
@@ -997,7 +984,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 156344104}
-    gameObjectHash: 11700
+    gameObjectHash: 20110
     member: {fileID: 199854365}
     renderer: {fileID: 156344106}
     renderHash: 0
@@ -1029,7 +1016,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 114227936}
-    gameObjectHash: 11680
+    gameObjectHash: 20090
     member: {fileID: 199854365}
     renderer: {fileID: 114227938}
     renderHash: 0
@@ -1061,7 +1048,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1738210557}
-    gameObjectHash: 11794
+    gameObjectHash: 20204
     member: {fileID: 199854365}
     renderer: {fileID: 1738210559}
     renderHash: 0
@@ -1093,7 +1080,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 972595321}
-    gameObjectHash: 11762
+    gameObjectHash: 20172
     member: {fileID: 199854365}
     renderer: {fileID: 972595323}
     renderHash: 0
@@ -1125,7 +1112,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1975469556}
-    gameObjectHash: 11838
+    gameObjectHash: 20248
     member: {fileID: 199854365}
     renderer: {fileID: 1975469558}
     renderHash: 0
@@ -1157,7 +1144,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 940255169}
-    gameObjectHash: 11752
+    gameObjectHash: 20162
     member: {fileID: 199854365}
     renderer: {fileID: 940255171}
     renderHash: 0
@@ -1189,7 +1176,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1854277468}
-    gameObjectHash: 11814
+    gameObjectHash: 20224
     member: {fileID: 199854365}
     renderer: {fileID: 1854277470}
     renderHash: 0
@@ -1221,7 +1208,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 92872778}
-    gameObjectHash: 11670
+    gameObjectHash: 20080
     member: {fileID: 199854365}
     renderer: {fileID: 92872780}
     renderHash: 0
@@ -1253,7 +1240,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 261643304}
-    gameObjectHash: 11716
+    gameObjectHash: 20126
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -1285,7 +1272,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 128597547}
-    gameObjectHash: 11690
+    gameObjectHash: 20100
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -1317,7 +1304,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1706658817}
-    gameObjectHash: 11788
+    gameObjectHash: 20198
     member: {fileID: 199854365}
     renderer: {fileID: 0}
     renderHash: 0
@@ -1350,7 +1337,7 @@ MonoBehaviour:
     terrainCulled: 0
   renderers:
   - gameObject: {fileID: 828305536}
-    gameObjectHash: 11732
+    gameObjectHash: 20142
     member: {fileID: 199854365}
     renderer: {fileID: 828305538}
     renderHash: 0
@@ -1382,7 +1369,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 888377833}
-    gameObjectHash: 11742
+    gameObjectHash: 20152
     member: {fileID: 199854365}
     renderer: {fileID: 888377835}
     renderHash: 0
@@ -1414,7 +1401,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1159428688}
-    gameObjectHash: 11772
+    gameObjectHash: 20182
     member: {fileID: 199854365}
     renderer: {fileID: 1159428690}
     renderHash: 0
@@ -1446,7 +1433,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1968577811}
-    gameObjectHash: 11828
+    gameObjectHash: 20238
     member: {fileID: 199854365}
     renderer: {fileID: 1968577813}
     renderHash: 0
@@ -1478,7 +1465,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 156344104}
-    gameObjectHash: 11700
+    gameObjectHash: 20110
     member: {fileID: 199854365}
     renderer: {fileID: 156344106}
     renderHash: 0
@@ -1510,7 +1497,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 114227936}
-    gameObjectHash: 11680
+    gameObjectHash: 20090
     member: {fileID: 199854365}
     renderer: {fileID: 114227938}
     renderHash: 0
@@ -1542,7 +1529,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1738210557}
-    gameObjectHash: 11794
+    gameObjectHash: 20204
     member: {fileID: 199854365}
     renderer: {fileID: 1738210559}
     renderHash: 0
@@ -1574,7 +1561,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 972595321}
-    gameObjectHash: 11762
+    gameObjectHash: 20172
     member: {fileID: 199854365}
     renderer: {fileID: 972595323}
     renderHash: 0
@@ -1606,7 +1593,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1975469556}
-    gameObjectHash: 11838
+    gameObjectHash: 20248
     member: {fileID: 199854365}
     renderer: {fileID: 1975469558}
     renderHash: 0
@@ -1638,7 +1625,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 940255169}
-    gameObjectHash: 11752
+    gameObjectHash: 20162
     member: {fileID: 199854365}
     renderer: {fileID: 940255171}
     renderHash: 0
@@ -1670,7 +1657,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 1854277468}
-    gameObjectHash: 11814
+    gameObjectHash: 20224
     member: {fileID: 199854365}
     renderer: {fileID: 1854277470}
     renderHash: 0
@@ -1702,7 +1689,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 92872778}
-    gameObjectHash: 11670
+    gameObjectHash: 20080
     member: {fileID: 199854365}
     renderer: {fileID: 92872780}
     renderHash: 0
