@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class audioManagerDelegate : MonoBehaviour {
+public class audioManagerView : MonoBehaviour {
 
 	//store
 	private AudioStore store;
