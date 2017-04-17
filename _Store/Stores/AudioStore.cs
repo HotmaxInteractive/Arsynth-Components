@@ -18,6 +18,9 @@ public class AudioStore : MonoBehaviour {
 	U3D.KVO.ValueObserving<int> __scalePosition = new U3D.KVO.ValueObserving<int>();
 
 
+	private List<keyItem> __keyCollection = new List<keyItem>();
+
+
 	//other observables
 	public U3D.KVO.ReadOnlyValueObserving<float> echoAmount { get { return __echoAmount; } } 
 	U3D.KVO.ValueObserving<float> __echoAmount = new U3D.KVO.ValueObserving<float>();
@@ -52,6 +55,15 @@ public class AudioStore : MonoBehaviour {
 		__scaleCollection.Add ("wholetone");
 		__scalePosition.set = 0;
 		__scale.set = __scaleCollection [__scalePosition.get];
+
+
+		__keyCollection.Add (new keyItem("key_one"));
+		__keyCollection.Add (new keyItem("key_two"));
+		__keyCollection.Add (new keyItem("key_three"));
+		__keyCollection.Add (new keyItem("key_four"));
+		__keyCollection.Add (new keyItem("key_five"));
+		__keyCollection.Add (new keyItem("key_six"));
+		__keyCollection.Add (new keyItem("key_seven"));
 
 
 		__echoAmount.set = 0f;
@@ -117,6 +129,16 @@ public class AudioStore : MonoBehaviour {
 		public sampleItem(string sampleName) {
 			name = sampleName;
 			clip = Resources.Load("Clips/" + sampleName) as AudioClip;
+		}
+	}
+
+
+	public class keyItem {
+		public string name;
+		public bool isActive;
+		public keyItem(string keyName) {
+			name = keyName;
+			isActive = false;
 		}
 	}
 		
