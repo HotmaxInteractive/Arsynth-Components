@@ -11,12 +11,10 @@ public class AudioStore : MonoBehaviour {
 	U3D.KVO.ValueObserving<AudioClip> __sample = new U3D.KVO.ValueObserving<AudioClip>();
 	U3D.KVO.ValueObserving<int> __samplePosition = new U3D.KVO.ValueObserving<int>();
 
-
 	private List<string> __scaleCollection = new List<string>();
 	public U3D.KVO.ReadOnlyValueObserving<string> scale { get { return __scale; } } 
 	U3D.KVO.ValueObserving<string> __scale = new U3D.KVO.ValueObserving<string>();
 	U3D.KVO.ValueObserving<int> __scalePosition = new U3D.KVO.ValueObserving<int>();
-
 
 
 	//other observables
@@ -54,6 +52,7 @@ public class AudioStore : MonoBehaviour {
 		__scalePosition.set = 0;
 		__scale.set = __scaleCollection [__scalePosition.get];
 
+
 		__echoAmount.set = 0f;
 		__chorusAmount.set = 0f;
 		__reverbAmount.set = 0f;
@@ -88,7 +87,6 @@ public class AudioStore : MonoBehaviour {
 		__looper.set = !__looper.get;
 	}
 
-
 	public void INCREMENT_SCALE (){
 		if (__scalePosition.get >= __scaleCollection.Count) {
 			__scalePosition.set = 0;
@@ -97,7 +95,6 @@ public class AudioStore : MonoBehaviour {
 		}
 		__scale.set = __scaleCollection [__scalePosition.get];
 	}
-		
 	public void INCREMENT_SAMPLE (){
 		if (__samplePosition.get >= __sampleCollection.Count) {
 			__samplePosition.set = 0;
@@ -106,8 +103,6 @@ public class AudioStore : MonoBehaviour {
 		}
 		__sample.set = __sampleCollection [__scalePosition.get].clip;
 	}
-
-
 
 
 	//wrapper for item in sampleCollection
@@ -119,4 +114,5 @@ public class AudioStore : MonoBehaviour {
 			clip = Resources.Load("Clips/" + sampleName) as AudioClip;
 		}
 	}
+		
 }

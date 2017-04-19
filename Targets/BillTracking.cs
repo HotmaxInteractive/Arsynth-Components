@@ -6,12 +6,13 @@ using Vuforia;
 public class BillTracking : MonoBehaviour, ITrackableEventHandler {
 
 	private TrackableBehaviour mTrackableBehaviour;
-	//public GameObject littleBuddy;
-	public GameObject trackingScreen;
-	bool onTracked;
 
-	void Start()
-	{
+	private UIStore store;
+
+	void Start() {
+
+		store = GameObject.FindWithTag ("Store_UI").GetComponent<UIStore>();
+
 		mTrackableBehaviour = GetComponent<TrackableBehaviour>();
 		if (mTrackableBehaviour)
 		{
@@ -19,22 +20,25 @@ public class BillTracking : MonoBehaviour, ITrackableEventHandler {
 		}
 	}
 
+
 	// tracks if a bill is detected. All stuff that happens on detection or lost goes here
 
 	public void OnTrackableStateChanged( TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
 	{
 
-		// bill is detected 
-
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
 		    newStatus == TrackableBehaviour.Status.TRACKED ||
 		    newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) 
 		{
+			
+			// SET TRACKED ON STORE
+			store.SET_VUPHORIA_TRACKED (true);
 
-			onTracked = true;
+
+			//TODO: CLEAN UP ALL THIS STUFF
 
 			//littleBuddy.GetComponent<Animator>().SetBool("tracked", true);
-			trackingScreen.GetComponent<Animator>().SetBool("tracked", true);
+			//trackingScreen.GetComponent<Animator>().SetBool("tracked", true);
 
 			//Renderer[] rendererComponents = littleBuddy.GetComponentsInChildren<Renderer>(true);
 			//Collider[] colliderComponents = littleBuddy.GetComponentsInChildren<Collider>(true);
@@ -70,10 +74,10 @@ public class BillTracking : MonoBehaviour, ITrackableEventHandler {
 		else
 		{
 
-			onTracked = false;
+			store.SET_VUPHORIA_TRACKED (false);
 
 			//littleBuddy.GetComponent<Animator>().SetBool("tracked", false);
-			trackingScreen.GetComponent<Animator>().SetBool("tracked", false);
+			//trackingScreen.GetComponent<Animator>().SetBool("tracked", false);
 
 			//Renderer[] rendererComponents = littleBuddy.GetComponentsInChildren<Renderer>(true);
 			//Collider[] colliderComponents = littleBuddy.GetComponentsInChildren<Collider>(true);

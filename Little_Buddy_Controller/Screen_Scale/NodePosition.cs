@@ -6,13 +6,10 @@ using DG.Tweening;
 
 public class NodePosition : MonoBehaviour {
 
-	public string scale;
-	string previousScale;
-	public GameObject key1;
-	public GameObject changeScale;
+	private AudioStore store;
+	private string scale;
 
-	Color c1 = Color.red;
-	Color c2 = Color.red;
+	string previousScale;
 
 	public Transform node0;
 	public Transform node1;
@@ -27,36 +24,47 @@ public class NodePosition : MonoBehaviour {
 	public Transform node10;
 	public Transform node11;
 
-	Transform [] nodesCollection = new Transform[12];
+	private List<Transform> nodesCollection = new List<Transform>();
 	Vector3 [] homePositions = new Vector3[12];
 
 	bool active;
 
+	Color c1 = Color.red;
+	Color c2 = Color.red;
+
 	//memory of last active Position
 	Vector3 lastActivePosition;
 
+
+
 	void Start () {
 
+		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
+		store.scale.RegisterObserver (updateScale);
+
 		//setting nodes - could change
-		nodesCollection [0] = node0;
-		nodesCollection [1] = node1;
-		nodesCollection [2] = node2;
-		nodesCollection [3] = node3;
-		nodesCollection [4] = node4;
-		nodesCollection [5] = node5;
-		nodesCollection [6] = node6;
-		nodesCollection [7] = node7;
-		nodesCollection [8] = node8;
-		nodesCollection [9] = node9;
-		nodesCollection [10] = node10;
-		nodesCollection [11] = node11;
+		nodesCollection.Add(node0);
+		nodesCollection.Add(node1);
+		nodesCollection.Add(node2);
+		nodesCollection.Add(node3);
+		nodesCollection.Add(node4);
+		nodesCollection.Add(node5);
+		nodesCollection.Add(node6);
+		nodesCollection.Add(node7);
+		nodesCollection.Add(node8);
+		nodesCollection.Add(node9);
+		nodesCollection.Add(node10);
+		nodesCollection.Add(node11);
+
 
 		//style lines AND SET HOME POSITION
-		for (int i = 0; i < nodesCollection.Length; i++) {
+		for (int i = 0; i < nodesCollection.Count; i++) {
 			nodesCollection [i].gameObject.GetComponent<LineRenderer> ().startWidth = 6f;
 			nodesCollection [i].gameObject.GetComponent<LineRenderer> ().endWidth = 6f;
+
 			nodesCollection [i].gameObject.GetComponent<LineRenderer> ().material = new Material (Shader.Find ("Standard"));
 			nodesCollection [i].gameObject.GetComponent<LineRenderer> ().material.color = new Color(245, 0, 0, 255);
+
 			homePositions [i] = nodesCollection [i].transform.localPosition;
 		}
 
@@ -65,12 +73,17 @@ public class NodePosition : MonoBehaviour {
 		scaleSetter ();
 	}
 
-	void MoveNode(){
-		scale = key1.GetComponent<PlaySound> ().activeScale;
 
+	private void updateScale(string newScale) {
+		scale = newScale;
+	}
+
+
+	void MoveNode(){
+		
 		if(previousScale != scale){
 			previousScale = scale;
-			for (int i = 0; i < nodesCollection.Length; i++) {
+			for (int i = 0; i < nodesCollection.Count; i++) {
 
 				if (scale == "major") {
 					if (i == 0) {active = true;}
@@ -164,10 +177,8 @@ public class NodePosition : MonoBehaviour {
 
 	}
 
-	void Update () {
 
-			MoveNode ();
-	}
+
 
 	void drawLines () {
 		for (int i = 0; i < homePositions.Length; i++) {
@@ -184,9 +195,8 @@ public class NodePosition : MonoBehaviour {
 	}
 
 	void scaleSetter(){
-		scale = key1.GetComponent<PlaySound> ().activeScale;
 
-		for (int i = 0; i < nodesCollection.Length; i++) {
+		for (int i = 0; i < nodesCollection.Count; i++) {
 
 			if (scale == "major") {
 				if (i == 0) {active = true;}

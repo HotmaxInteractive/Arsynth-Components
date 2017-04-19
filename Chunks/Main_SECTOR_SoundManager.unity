@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 492340479}
   m_Layer: 0
   m_Name: SoundBoard
-  m_TagString: Untagged
+  m_TagString: Sound_Board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455a7da7ce831894fa23a8f322a6fc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keys: []
 --- !u!1 &865932419
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 2034962533}
-    gameObjectHash: 11146
+    gameObjectHash: 34692
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0
@@ -314,7 +315,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 492340474}
-    gameObjectHash: 11128
+    gameObjectHash: 34674
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0
