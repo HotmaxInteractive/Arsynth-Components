@@ -11,14 +11,10 @@ public class AudioStore : MonoBehaviour {
 	U3D.KVO.ValueObserving<AudioClip> __sample = new U3D.KVO.ValueObserving<AudioClip>();
 	U3D.KVO.ValueObserving<int> __samplePosition = new U3D.KVO.ValueObserving<int>();
 
-
 	private List<string> __scaleCollection = new List<string>();
 	public U3D.KVO.ReadOnlyValueObserving<string> scale { get { return __scale; } } 
 	U3D.KVO.ValueObserving<string> __scale = new U3D.KVO.ValueObserving<string>();
 	U3D.KVO.ValueObserving<int> __scalePosition = new U3D.KVO.ValueObserving<int>();
-
-
-	private List<keyItem> __keyCollection = new List<keyItem>();
 
 
 	//other observables
@@ -57,15 +53,6 @@ public class AudioStore : MonoBehaviour {
 		__scale.set = __scaleCollection [__scalePosition.get];
 
 
-		__keyCollection.Add (new keyItem("key_one"));
-		__keyCollection.Add (new keyItem("key_two"));
-		__keyCollection.Add (new keyItem("key_three"));
-		__keyCollection.Add (new keyItem("key_four"));
-		__keyCollection.Add (new keyItem("key_five"));
-		__keyCollection.Add (new keyItem("key_six"));
-		__keyCollection.Add (new keyItem("key_seven"));
-
-
 		__echoAmount.set = 0f;
 		__chorusAmount.set = 0f;
 		__reverbAmount.set = 0f;
@@ -100,7 +87,6 @@ public class AudioStore : MonoBehaviour {
 		__looper.set = !__looper.get;
 	}
 
-
 	public void INCREMENT_SCALE (){
 		if (__scalePosition.get >= __scaleCollection.Count) {
 			__scalePosition.set = 0;
@@ -109,7 +95,6 @@ public class AudioStore : MonoBehaviour {
 		}
 		__scale.set = __scaleCollection [__scalePosition.get];
 	}
-		
 	public void INCREMENT_SAMPLE (){
 		if (__samplePosition.get >= __sampleCollection.Count) {
 			__samplePosition.set = 0;
@@ -120,8 +105,6 @@ public class AudioStore : MonoBehaviour {
 	}
 
 
-
-
 	//wrapper for item in sampleCollection
 	public class sampleItem {
 		public string name;
@@ -129,16 +112,6 @@ public class AudioStore : MonoBehaviour {
 		public sampleItem(string sampleName) {
 			name = sampleName;
 			clip = Resources.Load("Clips/" + sampleName) as AudioClip;
-		}
-	}
-
-
-	public class keyItem {
-		public string name;
-		public bool isActive;
-		public keyItem(string keyName) {
-			name = keyName;
-			isActive = false;
 		}
 	}
 		
