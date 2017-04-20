@@ -14,6 +14,11 @@ public class ChangeScale : MonoBehaviour, IVirtualButtonEventHandler {
 
 	}
 
+	void OnTouchDown(){
+		store.INCREMENT_SCALE ();
+	}
+
+
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
 		store.INCREMENT_SCALE ();
 	}

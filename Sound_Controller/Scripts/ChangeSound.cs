@@ -19,6 +19,10 @@ public class ChangeSound : MonoBehaviour, IVirtualButtonEventHandler {
 
 	}
 
+	void OnTouchDown(){
+		store.INCREMENT_SAMPLE ();
+	}
+
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
 		store.INCREMENT_SAMPLE ();
 	}

@@ -17,18 +17,18 @@ public class EchoEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 	}
 
 	void Update () {
-/*		if (effect.delay >= 5000) {
-			effect.delay = 0;
-		};
-		if (effect.delay < 500) {
-			effect.enabled = false;
-		} else {
-			effect.enabled = true;
-		}
-			*/
+
 		if (btnPress == true) {
 			store.INCREMENT_ECHO_AMOUNT();
 		}
+	}
+
+	void OnTouchDown(){
+		btnPress = true;
+	}
+
+	void OnTouchUp(){
+		btnPress = false;
 	}
 
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb) {

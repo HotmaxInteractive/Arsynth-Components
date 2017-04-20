@@ -18,20 +18,19 @@ public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 
 
 	void Update () {
-		/*
-		if (effect.rate >= 20) {
-			effect.rate = 0;
-		};
-		if (effect.rate < 2) {
-			effect.enabled = false;
-		} else {
-			effect.enabled = true;
-		}*/
-
+		
 		if (btnPress == true) {
 			store.INCREMENT_CHORUS_AMOUNT();
 		}
 
+	}
+
+	void OnTouchDown(){
+		btnPress = true;
+	}
+
+	void OnTouchUp(){
+		btnPress = false;
 	}
 
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb) {

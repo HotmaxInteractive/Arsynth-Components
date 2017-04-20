@@ -29,15 +29,28 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 	}
 
+
+	// Vuforia Button Events
+
 	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
 
 		//GRAB THE AUDIOMANAGER BY TAG -- and use the public keyNumber to turn on the audioSource in the public array.
 		audioManager.keys [keyNumber].Play ();
-
 	}
 
 	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){
 
+	}
+
+	// Touch Input Events
+
+	void OnTouchDown(){
+		audioManager.keys [keyNumber].Play ();
+		gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+	}
+
+	void OnTouchUp(){
+		gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
 	}
 
 }

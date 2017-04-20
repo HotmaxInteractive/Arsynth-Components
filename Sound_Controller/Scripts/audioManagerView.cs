@@ -24,6 +24,11 @@ public class audioManagerView : MonoBehaviour {
 
 
 	void Start () {
+
+		echo = GetComponent<AudioEchoFilter> ();
+		reverb = GetComponent<AudioReverbFilter> ();
+		chorus = GetComponent<AudioChorusFilter> ();
+
 		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 
 		store.scale.RegisterObserver (updatePitch);
@@ -33,10 +38,6 @@ public class audioManagerView : MonoBehaviour {
 		store.reverbAmount.RegisterObserver (updateReverbAmount);
 		store.chorusAmount.RegisterObserver (updateChorusAmount);
 		store.looper.RegisterObserver (updateLooper);
-
-		echo = GetComponent<AudioEchoFilter> ();
-		reverb = GetComponent<AudioReverbFilter> ();
-		chorus = GetComponent<AudioChorusFilter> ();
 	}
 
 
