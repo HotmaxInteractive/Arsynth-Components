@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class audioManagerView : MonoBehaviour {
 
 	//store
 	private AudioStore store;
 	private AudioEchoFilter echo;
+	private AudioHighPassFilter highpass;
 	private AudioReverbFilter reverb;
 	private AudioChorusFilter chorus;
 
@@ -26,6 +28,7 @@ public class audioManagerView : MonoBehaviour {
 	void Start () {
 
 		echo = GetComponent<AudioEchoFilter> ();
+		highpass = GetComponent<AudioHighPassFilter> ();
 		reverb = GetComponent<AudioReverbFilter> ();
 		chorus = GetComponent<AudioChorusFilter> ();
 
@@ -35,6 +38,7 @@ public class audioManagerView : MonoBehaviour {
 		store.sample.RegisterObserver (updateSample);
 
 		store.echoAmount.RegisterObserver (updateEchoAmount);
+		store.highpassAmount.RegisterObserver (updateHighpassAmount);
 		store.reverbAmount.RegisterObserver (updateReverbAmount);
 		store.chorusAmount.RegisterObserver (updateChorusAmount);
 		store.looper.RegisterObserver (updateLooper);
@@ -80,11 +84,12 @@ public class audioManagerView : MonoBehaviour {
 		for (var i = 0; i < keys.Length; i++) {
 			keys[i].pitch = Mathf.Pow (pitchMultiplier, steps[i]);
 		}
+
+		Debug.Log ("Scale is updated: " + scale);
 	}
 
 
 	void updateSample(AudioClip sample){
-		Debug.Log ("Sample is updated:" + sample);
 		foreach (AudioSource key in keys) {
 			key.clip = sample;
 		}
@@ -98,6 +103,13 @@ public class audioManagerView : MonoBehaviour {
 		}
 	}
 
+	void updateHighpassAmount(float highpassAmount){
+		highpass.cutoffFrequency = highpassAmount;
+		if (highpass.cutoffFrequency >= 6000) {
+			store.RESET_HIGHPASS_AMOUNT ();
+		}
+	}
+
 	void updateReverbAmount(float reverbAmount){
 		reverb.decayTime = reverbAmount;
 		if (reverb.decayTime >= 20) {
@@ -107,7 +119,7 @@ public class audioManagerView : MonoBehaviour {
 
 	void updateChorusAmount(float chorusAmount){
 		chorus.rate = chorusAmount;
-		if (echo.delay >= 20) {
+		if (chorus.rate >= 20) {
 			store.RESET_CHORUS_AMOUNT ();
 		}
 	}
