@@ -116,9 +116,10 @@ GameObject:
   - component: {fileID: 492340465}
   - component: {fileID: 492340478}
   - component: {fileID: 492340477}
-  - component: {fileID: 492340476}
   - component: {fileID: 492340475}
+  - component: {fileID: 492340476}
   - component: {fileID: 492340479}
+  - component: {fileID: 492340480}
   m_Layer: 0
   m_Name: SoundBoard
   m_TagString: Sound_Board
@@ -129,8 +130,7 @@ GameObject:
 --- !u!166 &492340475
 AudioChorusFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 166997997209397530, guid: f378b73596d18f9438852c561048da6e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492340474}
   m_Enabled: 1
@@ -141,18 +141,15 @@ AudioChorusFilter:
   m_Delay: 40
   m_Rate: 0.8
   m_Depth: 0.03
---- !u!168 &492340476
-AudioEchoFilter:
+--- !u!165 &492340476
+AudioHighPassFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 168608861574947674, guid: f378b73596d18f9438852c561048da6e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 492340474}
   m_Enabled: 1
-  m_Delay: 500
-  m_DecayRatio: 0
-  m_WetMix: 1
-  m_DryMix: 1
+  m_CutoffFrequency: 5000
+  m_HighpassResonanceQ: 1
 --- !u!164 &492340477
 AudioReverbFilter:
   m_ObjectHideFlags: 0
@@ -197,6 +194,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: []
+--- !u!168 &492340480
+AudioEchoFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492340474}
+  m_Enabled: 1
+  m_Delay: 500
+  m_DecayRatio: 0.5
+  m_WetMix: 1
+  m_DryMix: 1
 --- !u!1 &865932419
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - gameObject: {fileID: 2034962533}
-    gameObjectHash: 34692
+    gameObjectHash: 62046
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0
@@ -315,7 +323,7 @@ MonoBehaviour:
     lightCulled: 0
     terrainCulled: 0
   - gameObject: {fileID: 492340474}
-    gameObjectHash: 34674
+    gameObjectHash: 62026
     member: {fileID: 2034962535}
     renderer: {fileID: 0}
     renderHash: 0

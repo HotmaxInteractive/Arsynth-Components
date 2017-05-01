@@ -21,4 +21,14 @@ public class ClickSounds : MonoBehaviour, IVirtualButtonEventHandler {
 		audioS.pitch = Random.Range(.75f, .85f);
 		audioS.Play();
 	}
+
+	void OnTouchDown(){
+		audioS.pitch = Random.Range(.95f, 1.05f);
+		audioS.Play();
+	}
+
+	void OnTouchUp(){
+		audioS.pitch = Random.Range(.75f, .85f);
+		audioS.Play();
+	}
 }

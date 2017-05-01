@@ -25,4 +25,8 @@ public class ToggleLoop : MonoBehaviour, IVirtualButtonEventHandler {
 
 	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb) {
 	}
+
+	void OnTouchDown(){
+		store.TOGGLE_LOOPER ();
+	}
 }

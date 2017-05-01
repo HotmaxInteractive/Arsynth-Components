@@ -21,6 +21,9 @@ public class AudioStore : MonoBehaviour {
 	public U3D.KVO.ReadOnlyValueObserving<float> echoAmount { get { return __echoAmount; } } 
 	U3D.KVO.ValueObserving<float> __echoAmount = new U3D.KVO.ValueObserving<float>();
 
+	public U3D.KVO.ReadOnlyValueObserving<float> highpassAmount { get { return __highpassAmount; } } 
+	U3D.KVO.ValueObserving<float> __highpassAmount = new U3D.KVO.ValueObserving<float>();
+
 	public U3D.KVO.ReadOnlyValueObserving<float> chorusAmount { get { return __chorusAmount; } } 
 	U3D.KVO.ValueObserving<float> __chorusAmount = new U3D.KVO.ValueObserving<float>();
 
@@ -48,12 +51,13 @@ public class AudioStore : MonoBehaviour {
 		__scaleCollection.Add ("minor");
 		__scaleCollection.Add ("blues");
 		__scaleCollection.Add ("pentatonic");
-		__scaleCollection.Add ("wholetone");
+		__scaleCollection.Add ("whole tone");
 		__scalePosition.set = 0;
 		__scale.set = __scaleCollection [__scalePosition.get];
 
 
 		__echoAmount.set = 0f;
+		__highpassAmount.set = 0f;
 		__chorusAmount.set = 0f;
 		__reverbAmount.set = 0f;
 		__looper.set = false;
@@ -67,14 +71,21 @@ public class AudioStore : MonoBehaviour {
 	public void INCREMENT_ECHO_AMOUNT (){
 		__echoAmount.set = __echoAmount.get + 15f;
 	}
+	public void INCREMENT_HIGHPASS_AMOUNT (){
+		__highpassAmount.set = __highpassAmount.get + 15f;
+	}
 	public void INCREMENT_REVERB_AMOUNT (){
 		__reverbAmount.set = __reverbAmount.get + 0.5f;
 	}
 	public void INCREMENT_CHORUS_AMOUNT (){
 		__chorusAmount.set = __chorusAmount.get + 0.5f;
 	}
+
 	public void RESET_ECHO_AMOUNT (){
 		__echoAmount.set = 0f;
+	}
+	public void RESET_HIGHPASS_AMOUNT (){
+		__highpassAmount.set = 0f;
 	}
 	public void RESET_REVERB_AMOUNT (){
 		__reverbAmount.set = 0f;
@@ -88,7 +99,7 @@ public class AudioStore : MonoBehaviour {
 	}
 
 	public void INCREMENT_SCALE (){
-		if (__scalePosition.get >= __scaleCollection.Count) {
+		if (__scalePosition.get >= __scaleCollection.Count - 1) {
 			__scalePosition.set = 0;
 		} else {
 			__scalePosition.set = __scalePosition.get + 1;
@@ -96,12 +107,13 @@ public class AudioStore : MonoBehaviour {
 		__scale.set = __scaleCollection [__scalePosition.get];
 	}
 	public void INCREMENT_SAMPLE (){
-		if (__samplePosition.get >= __sampleCollection.Count) {
+		if (__samplePosition.get >= __sampleCollection.Count - 1 ) {
 			__samplePosition.set = 0;
 		} else {
 			__samplePosition.set = __samplePosition.get + 1;
 		}
-		__sample.set = __sampleCollection [__scalePosition.get].clip;
+
+		__sample.set = __sampleCollection [__samplePosition.get].clip;
 	}
 
 

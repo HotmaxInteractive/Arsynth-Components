@@ -30,7 +30,14 @@ public class ReverbEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 		if (btnPress == true) {
 			store.INCREMENT_REVERB_AMOUNT();
 		}
+	}
 
+	void OnTouchDown(){
+		btnPress = true;
+	}
+
+	void OnTouchUp(){
+		btnPress = false;
 	}
 
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb) {

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vuforia;
 
-public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
+public class HighpassEffectChanger : MonoBehaviour {
+
 
 	public bool btnPress;
 
@@ -12,17 +12,15 @@ public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 
 	void Start () {
 		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
-		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 		btnPress = false;
 	}
 
-
 	void Update () {
-		
-		if (btnPress == true) {
-			store.INCREMENT_CHORUS_AMOUNT();
-		}
 
+		if (btnPress == true) {
+			//			store.INCREMENT_ECHO_AMOUNT();
+			store.INCREMENT_HIGHPASS_AMOUNT();
+		}
 	}
 
 	void OnTouchDown(){
@@ -30,14 +28,6 @@ public class ChorusEffectChanger : MonoBehaviour, IVirtualButtonEventHandler {
 	}
 
 	void OnTouchUp(){
-		btnPress = false;
-	}
-
-	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb) {
-		btnPress = true;
-	}
-
-	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb) {
 		btnPress = false;
 	}
 }
