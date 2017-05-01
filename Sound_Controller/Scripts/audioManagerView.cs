@@ -15,6 +15,7 @@ public class audioManagerView : MonoBehaviour {
 
 	//make a list of audioSource Components
 	public AudioSource[] keys;
+	private int[] steps;
 
 	void Awake(){
 		keys = new AudioSource[7];
@@ -41,7 +42,8 @@ public class audioManagerView : MonoBehaviour {
 
 	void RegisterKeys(int keyAmount){
 		for (int i = 0; i < keyAmount; i++) {
-			AudioSource source = gameObject.AddComponent<AudioSource> () as AudioSource;
+			GameObject audioSourceHolder = new GameObject("audioHolder");
+			AudioSource source = audioSourceHolder.AddComponent<AudioSource> () as AudioSource;
 			source.clip = Resources.Load ("Clips/fuzz") as AudioClip;
 			keys[i] = source;
 		}
@@ -51,34 +53,33 @@ public class audioManagerView : MonoBehaviour {
 	void updatePitch(string scale){
 
 		//loop through the audiosource array and pitch them properly.
-		for (var i = 0; i < keys.Length; i++) {
-			keys[i].pitch = Mathf.Pow (pitchMultiplier, 1);
-		}
 
-		/*switch (scale)  
+		switch (scale)  
 		{  
 		case "major":  
-			note.pitch = Mathf.Pow (pitchMultiplier, majorSteps);
+			steps = new int[] {1, 3, 5, 6, 8, 10, 12};
 			break;
 		case "minor":  
-			note.pitch = Mathf.Pow (pitchMultiplier, minorSteps);  
+			steps = new int[] {1, 3, 4, 6, 8, 9, 11};
 			break;  
 		case "blues":  
-			note.pitch = Mathf.Pow (pitchMultiplier, bluesSteps); 
+			steps = new int[] {1, 4, 6, 7, 8, 11, 13};
 			break;
 		case "pentatonic":  
-			note.pitch = Mathf.Pow (pitchMultiplier, pentatonicSteps);  
+			steps = new int[] {1, 3, 5, 8, 10, 13, 15};
 			break;
 		case "whole tone":  
-			note.pitch = Mathf.Pow (pitchMultiplier, wholeToneSteps);  
+			steps = new int[] {1, 3, 5, 7, 9, 11, 13};
 			break;
-		default:  
-			Debug.Log (note);
-			note.pitch = Mathf.Pow (pitchMultiplier, majorSteps);  
+		default:
+			steps = new int[] {1, 3, 5, 6, 8, 10, 12};
 			break;  
-		}  */
-	}
+		}
 
+		for (var i = 0; i < keys.Length; i++) {
+			keys[i].pitch = Mathf.Pow (pitchMultiplier, steps[i]);
+		}
+	}
 
 	void updateSample(AudioClip sample){
 		Debug.Log ("Sample is updated:" + sample);

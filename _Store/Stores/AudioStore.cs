@@ -101,7 +101,7 @@ public class AudioStore : MonoBehaviour {
 		} else {
 			__samplePosition.set = __samplePosition.get + 1;
 		}
-		__sample.set = __sampleCollection [__scalePosition.get].clip;
+		__sample.set = __sampleCollection [__samplePosition.get].clip;
 	}
 
 
