@@ -88,7 +88,7 @@ public class AudioStore : MonoBehaviour {
 	}
 
 	public void INCREMENT_SCALE (){
-		if (__scalePosition.get >= __scaleCollection.Count) {
+		if (__scalePosition.get >= __scaleCollection.Count - 1) {
 			__scalePosition.set = 0;
 		} else {
 			__scalePosition.set = __scalePosition.get + 1;
@@ -96,7 +96,7 @@ public class AudioStore : MonoBehaviour {
 		__scale.set = __scaleCollection [__scalePosition.get];
 	}
 	public void INCREMENT_SAMPLE (){
-		if (__samplePosition.get >= __sampleCollection.Count) {
+		if (__samplePosition.get >= __sampleCollection.Count - 1) {
 			__samplePosition.set = 0;
 		} else {
 			__samplePosition.set = __samplePosition.get + 1;

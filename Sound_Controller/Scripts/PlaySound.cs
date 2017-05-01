@@ -1,13 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vuforia;
 
-public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
-
-	//TODO: move steps and multiplier to audioManager
-	[SerializeField]
-	private float majorSteps, minorSteps, bluesSteps, pentatonicSteps, wholeToneSteps;
+public class PlaySound : MonoBehaviour {
 
 	// TODO: DELETE THIS AFTER EVERYTHING HAS BEEN FIXED
 	// -------------------------------------------
@@ -25,19 +20,12 @@ public class PlaySound : MonoBehaviour, IVirtualButtonEventHandler {
 	void Start () {
 		store = GameObject.FindGameObjectWithTag ("Store_Audio").GetComponent<AudioStore>();
 		audioManager = GameObject.FindGameObjectWithTag ("Sound_Board").GetComponent<audioManagerView>();
-
-		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 	}
 
-	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
+	void OnTouchDown(){
 
 		//GRAB THE AUDIOMANAGER BY TAG -- and use the public keyNumber to turn on the audioSource in the public array.
 		audioManager.keys [keyNumber].Play ();
 
 	}
-
-	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){
-
-	}
-
 }

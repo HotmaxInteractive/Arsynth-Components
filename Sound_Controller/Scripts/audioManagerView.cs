@@ -82,7 +82,6 @@ public class audioManagerView : MonoBehaviour {
 	}
 
 	void updateSample(AudioClip sample){
-		Debug.Log ("Sample is updated:" + sample);
 		foreach (AudioSource key in keys) {
 			key.clip = sample;
 		}

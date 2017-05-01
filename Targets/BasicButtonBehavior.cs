@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Vuforia;
 
-public class BasicButtonBehavior : MonoBehaviour, IVirtualButtonEventHandler {
+public class BasicButtonBehavior : MonoBehaviour {
 	public Boolean buttonIsPressed;
 
 	void Start () {
-		gameObject.GetComponent<VirtualButtonBehaviour> ().RegisterEventHandler (this);
 	}
 
-	public void OnButtonPressed (VirtualButtonAbstractBehaviour vb){
+	void OnTouchDown(){
 		gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
 		buttonIsPressed = true;
 	}
 
-	public void OnButtonReleased (VirtualButtonAbstractBehaviour vb){
+	void OnTouchUp(){
 		gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
 		buttonIsPressed = false;
 	}
 
-	void Update () {
-		
+	void OnTouchExit(){
+		gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+		buttonIsPressed = false;
 	}
 }
